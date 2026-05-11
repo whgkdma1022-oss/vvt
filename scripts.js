@@ -280,19 +280,41 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSelect = document.getElementById('lang-select');
     if (langSelect) langSelect.addEventListener('change', (e) => switchLanguage(e.target.value));
 
+    // Mobile Menu & Scroll Logic
     const menuToggle = document.getElementById('menu-toggle');
     const navContainer = document.getElementById('nav-container');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbar = document.querySelector('.navbar');
+
     if (menuToggle && navContainer) {
         menuToggle.addEventListener('click', () => {
             navContainer.classList.toggle('active');
             menuToggle.innerText = navContainer.classList.contains('active') ? '✕' : '☰';
         });
+
+        // Close menu on link click (important for mobile)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navContainer.classList.remove('active');
+                menuToggle.innerText = '☰';
+            });
+        });
     }
+
+    // Scroll Effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+        } else {
+            navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+            navbar.style.boxShadow = 'none';
+        }
+    });
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, index) => {
             if (entry.isIntersecting) {
-                // 시각적 리듬을 위한 순차적 딜레이 적용
                 setTimeout(() => {
                     entry.target.classList.add('fadeIn');
                 }, index * 150);
@@ -307,7 +329,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initROICalculator();
     initBoardCategories();
-    updateCategoryCounts(); // 숫자 업데이트 추가
+    updateCategoryCounts();
     switchLanguage('ko');
 });
 

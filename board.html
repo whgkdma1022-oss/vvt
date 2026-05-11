@@ -76,15 +76,20 @@
     <!-- Navigation -->
     <nav class="navbar">
         <a href="index.html" class="logo">ROBO<span>LEASE</span></a>
-        <button id="menu-toggle" style="display:none;">☰</button>
-        <div id="nav-container" style="display: flex; align-items: center; gap: 20px;">
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-toggle" aria-label="메뉴 열기">☰</button>
+
+        <div id="nav-container">
             <ul class="nav-links">
                 <li><a href="index.html#solutions" class="nav-link">Solutions</a></li>
                 <li><a href="index.html#fleet" class="nav-link">Robotics</a></li>
                 <li><a href="board.html" class="nav-link active" style="color: var(--primary-color);">Community</a></li>
             </ul>
-            <div id="auth-status" style="font-size: 0.85rem;"></div>
-            <button id="auth-btn" style="background:none; border: 1px solid #ccc; padding: 5px 12px; border-radius: 4px; cursor: pointer;">Login</button>
+            <div class="nav-actions" style="display: flex; align-items: center; gap: 20px;">
+                <div id="auth-status" style="font-size: 0.85rem; font-weight: 600;"></div>
+                <button id="auth-btn" style="background:none; border: 1px solid #ccc; padding: 10px 20px; border-radius: 4px; cursor: pointer; font-family: inherit; font-weight: 600;">Login</button>
+            </div>
         </div>
     </nav>
 
