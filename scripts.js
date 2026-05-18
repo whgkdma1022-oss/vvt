@@ -477,3 +477,70 @@ function renderFAQs(data) {
         </div>
     `).join('');
 }
+
+// --- Community Board Logic ---
+async function loadPosts() {
+    const list = document.getElementById('post-list');
+    if (!list) return;
+
+    try {
+        const snapshot = await firebase.firestore().collection('posts')
+            .orderBy('createdAt', 'desc').limit(20).get();
+        
+        if (snapshot.empty) {
+            list.innerHTML = `<div class="card" style="padding: 50px; text-align: center; color: #999;">작성된 게시글이 없습니다. 첫 글을 남겨보세요!</div>`;
+            return;
+        }
+
+        list.innerHTML = snapshot.docs.map(doc => {
+            const data = doc.data();
+            const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : '방금 전';
+            return `
+                <div class="card post-card" style="padding: 25px; transition: var(--transition);">
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                        <span class="case-badge" style="margin-bottom: 0;">${data.category}</span>
+                        <span style="font-size: 0.85rem; color: #999;">${date}</span>
+                    </div>
+                    <h4 style="font-size: 1.25rem; margin-bottom: 10px;">${data.title}</h4>
+                    <p style="color: #555; line-height: 1.6; margin-bottom: 15px;">${data.content}</p>
+                    <div style="display: flex; align-items: center; gap: 10px; font-size: 0.85rem; color: #666;">
+                        <span style="font-weight: 600;">👤 ${data.userName || 'Anonymous'}</span>
+                        <span>•</span>
+                        <span>익명 피드백</span>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    } catch (e) {
+        list.innerHTML = `<div class="card" style="padding: 50px; text-align: center; color: #f44;">데이터 로드 실패: ${e.message}</div>`;
+    }
+}
+
+const btnSavePost = document.getElementById('btn-save-post');
+if (btnSavePost) {
+    btnSavePost.addEventListener('click', async () => {
+        const category = document.getElementById('post-category').value;
+        const title = document.getElementById('post-title').value;
+        const content = document.getElementById('post-content').value;
+
+        if (!title || !content) return alert('제목과 내용을 입력해 주세요.');
+        if (!currentUser) return alert('로그인이 필요합니다.');
+
+        try {
+            const userId = currentUser.email.split('@')[0];
+            await firebase.firestore().collection('posts').add({
+                category,
+                title,
+                content,
+                userId: userId,
+                userName: userId,
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
+            });
+            alert('게시글이 성공적으로 등록되었습니다.');
+            closeModal();
+            loadPosts();
+        } catch (e) {
+            alert('등록 실패: ' + e.message);
+        }
+    });
+}
