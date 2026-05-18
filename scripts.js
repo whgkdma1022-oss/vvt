@@ -264,7 +264,10 @@ if (typeof firebase !== 'undefined') {
             const userId = user.email.split('@')[0];
             isAdmin = userId === 'admin';
             if (statusEl) statusEl.innerText = `${userId} (${isAdmin ? 'Admin' : 'User'})`;
-            if (authBtn) authBtn.innerText = 'Logout';
+            if (authBtn) {
+                authBtn.innerText = 'Logout';
+                authBtn.onclick = () => firebase.auth().signOut().then(() => alert('로그아웃 되었습니다.'));
+            }
             if (newPostBtn) {
                 newPostBtn.style.display = 'block';
                 newPostBtn.onclick = () => openModal('post');
@@ -273,9 +276,12 @@ if (typeof firebase !== 'undefined') {
             currentUser = null;
             isAdmin = false;
             if (statusEl) statusEl.innerText = '';
-            if (authBtn) authBtn.innerText = 'Login';
+            if (authBtn) {
+                authBtn.innerText = 'Login';
+                authBtn.onclick = () => openModal('login');
+            }
             if (newPostBtn) {
-                newPostBtn.style.display = 'block'; // 버튼은 항상 보여줌
+                newPostBtn.style.display = 'block'; 
                 newPostBtn.onclick = () => {
                     alert('로그인이 필요한 서비스입니다.');
                     openModal('login');
@@ -543,11 +549,16 @@ async function loadPosts(filterCat = 'all') {
         }
         list.innerHTML = filtered.map(data => {
             const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : '방금 전';
+            const deleteBtn = (isAdmin && data.id) ? `<button onclick="deletePost('${data.id}')" style="background:none; border:none; color:#f44; cursor:pointer; font-size:0.85rem;">[삭제]</button>` : '';
+            
             return `
                 <div class="card post-card" style="padding: 25px; transition: var(--transition); border: 1px solid var(--border-color);">
                     <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
                         <span class="case-badge" style="margin-bottom: 0;">${data.category}</span>
-                        <span style="font-size: 0.85rem; color: #999;">${date}</span>
+                        <div style="display: flex; gap: 10px; align-items: center;">
+                            ${deleteBtn}
+                            <span style="font-size: 0.85rem; color: #999;">${date}</span>
+                        </div>
                     </div>
                     <h4 style="font-size: 1.25rem; margin-bottom: 10px;">${data.title}</h4>
                     <p style="color: #555; line-height: 1.6; margin-bottom: 15px;">${data.content}</p>
@@ -565,13 +576,25 @@ async function loadPosts(filterCat = 'all') {
         const snapshot = await firebase.firestore().collection('posts')
             .orderBy('createdAt', 'desc').get();
         
-        const dbPosts = snapshot.docs.map(doc => doc.data());
+        const dbPosts = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
         renderPosts([...dbPosts, ...samplePosts]);
     } catch (e) {
         console.warn("Firebase load failed, using samples:", e);
         renderPosts(samplePosts);
     }
 }
+
+async function deletePost(id) {
+    if (!confirm('정말 이 게시글을 삭제하시겠습니까?')) return;
+    try {
+        await firebase.firestore().collection('posts').doc(id).delete();
+        alert('게시글이 삭제되었습니다.');
+        loadPosts(currentCategory);
+    } catch (e) {
+        alert('삭제 실패: ' + e.message);
+    }
+}
+window.deletePost = deletePost;
 
 // Add Category Click Events
 document.addEventListener('DOMContentLoaded', () => {
