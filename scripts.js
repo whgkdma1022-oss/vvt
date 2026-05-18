@@ -98,7 +98,40 @@ const translations = {
         roi_label_manual: "월간 수동 검사 비용 ($)",
         roi_label_hours: "월간 검사 시간",
         roi_savings_label: "RoboLease 도입 시 예상 월간 절감액",
-        roi_note: "*표준 ANYmal 구독 vs 인력 비용 및 위험 완화를 기준으로 합니다."
+        roi_note: "*표준 ANYmal 구독 vs 인력 비용 및 위험 완화를 기준으로 합니다.",
+        case_tagline: "Success Stories",
+        case_title: "글로벌 성공 사례",
+        case_desc: "RoboLease Global의 전문성이 입증된 현장 사례를 확인하십시오.",
+        roi_calculator_title: "간이 ROI 계산기",
+        roi_calculator_desc: "사용자가 직접 로봇 도입 시의 경제적 가치를 체감할 수 있습니다.",
+        roi_result_label: "RoboLease 도입 후 예상 연간 절감액",
+        help_title: "고객 지원 센터 (Help Center)",
+        help_desc: "자주 묻는 질문(FAQ) 검색 및 1:1 기술 지원 시스템.",
+        fleet_tagline: "Engineering Excellence",
+        fleet_title: "ANYmal 상세 사양",
+        fleet_desc: "세계 최고 수준의 정밀도와 내구성을 자랑하는 ANYmal의 하드웨어 사양입니다.",
+        process_tagline: "How It Works",
+        process_title: "렌탈 서비스 프로세스",
+        process_desc: "문의부터 유지보수까지, RoboLease Global은 모든 과정을 책임집니다.",
+        process_step1_title: "문의 및 견적",
+        process_step1_desc: "현장 상황에 맞는 최적의 로봇 모델과 수량을 제안합니다.",
+        process_step2_title: "전략 및 계획",
+        process_step2_desc: "자율 주행 경로와 검사 시나리오를 정밀하게 설계합니다.",
+        process_step3_title: "배송 및 설치",
+        process_step3_desc: "전문 엔지니어가 현장을 방문하여 로봇을 배포하고 교육을 실시합니다.",
+        process_step4_title: "지원 및 유지보수",
+        process_step4_desc: "24/7 원격 관제와 정기 점검을 통해 안정적인 운용을 보장합니다.",
+        nav_demo: "시연 영상",
+        demo_tagline: "Visual Proof",
+        demo_title: "ANYmal 시연 영상",
+        demo_desc: "자율 주행 로봇 ANYmal의 실전 현장 가동 영상과 기술 시연을 확인하십시오.",
+        video1_title: "ANYmal 산업용 등반 시연",
+        video2_title: "ANYmal 다관절 제어 및 기동",
+        channel_desc: "더 많은 ANYmal의 구동 영상은 공식 채널에서 확인하실 수 있습니다.",
+        motion_tagline: "ANYmal in Motion",
+        motion_title: "실시간 기동 데모 모니터링",
+        motion_desc: "자율 주행 로봇의 정밀한 움직임과 환경 인지 과정을 비주얼라이제이션으로 확인하십시오.",
+        btn_watch_youtube: "YouTube에서 시청하기"
     },
     en: {
         nav_solutions: "Rental Solutions",
@@ -132,13 +165,15 @@ const translations = {
         sol_desc3: "Go beyond collection. Predict equipment life and replacement cycles using AI analysis to minimize downtime.",
         solutions_title: "Rental Packages",
         solutions_desc: "Select a flexible subscription model that fits your business scale.",
-        fleet_tagline: "Our Fleet",
-        fleet_title: "ANYmal: The Standard in Autonomous Inspection",
-        fleet_desc: "Equipped with thermal cameras, acoustic sensors, and LiDAR, ANYmal provides unparalleled situational awareness in complex environments.",
-        fleet_li1: "3D Digital Twin Capture",
-        fleet_li2: "IP67 Rated for Harsh Environments",
-        fleet_li3: "90-Minute Continuous Operations",
-        fleet_li4: "Automated Docking and Charging",
+        fleet_tagline: "Engineering Excellence",
+        fleet_title: "ANYmal Technical Specifications",
+        fleet_desc: "Hardware specifications for ANYmal, boasting world-class precision and durability.",
+        case_tagline: "Success Stories",
+        case_title: "Global Success Stories",
+        case_desc: "Review proven field cases where RoboLease Global expertise was demonstrated.",
+        roi_calculator_title: "Simple ROI Calculator",
+        roi_calculator_desc: "Experience the economic value of adopting robots first-hand.",
+        roi_result_label: "Estimated Annual Savings after RoboLease",
         industries_title: "Industries We Serve",
         industries_desc: "From energy to chemicals, we help industry leaders stay safer and smarter.",
         industries_oil_title: "Oil & Gas",
@@ -172,7 +207,37 @@ const translations = {
         footer_news_desc: "Join our newsletter for the latest in industrial robotics.",
         footer_subscribe: "Subscribe",
         footer_copyright: "&copy; 2026 RoboLease Global AG. All rights reserved.",
-        footer_swiss: "Swiss Engineered. Global Excellence."
+        footer_swiss: "Swiss Engineered. Global Excellence.",
+        case_tagline: "Success Stories",
+        case_title: "Global Success Stories",
+        case_desc: "Review proven field cases where RoboLease Global expertise was demonstrated.",
+        roi_calculator_title: "Simple ROI Calculator",
+        roi_calculator_desc: "Experience the economic value of adopting robots first-hand.",
+        roi_result_label: "Estimated Annual Savings after RoboLease",
+        help_title: "Help Center",
+        help_desc: "FAQ Search and 1:1 Technical Support System.",
+        process_tagline: "How It Works",
+        process_title: "Rental Service Process",
+        process_desc: "From inquiry to maintenance, RoboLease Global takes responsibility for every step.",
+        process_step1_title: "Inquiry & Quotation",
+        process_step1_desc: "We propose the optimal robot models and quantities for your site conditions.",
+        process_step2_title: "Strategy & Planning",
+        process_step2_desc: "We precisely design autonomous navigation paths and inspection scenarios.",
+        process_step3_title: "Delivery & Installation",
+        process_step3_desc: "Professional engineers visit your site to deploy robots and conduct training.",
+        process_step4_title: "Support & Maintenance",
+        process_step4_desc: "We ensure stable operations through 24/7 remote monitoring and regular inspections.",
+        nav_demo: "Demos",
+        demo_tagline: "Visual Proof",
+        demo_title: "ANYmal Demo Videos",
+        demo_desc: "Watch ANYmal in action across various industrial environments.",
+        video1_title: "ANYmal: Precision Climbing Demo",
+        video2_title: "ANYmal: Versatile Motion Control",
+        channel_desc: "Visit the official YouTube channel for more videos.",
+        motion_tagline: "ANYmal in Motion",
+        motion_title: "Real-time Motion Demo Monitoring",
+        motion_desc: "Observe the precise movements and environmental awareness of our autonomous robots.",
+        btn_watch_youtube: "Watch on YouTube"
     }
 };
 
@@ -283,7 +348,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu & Scroll Logic
     const menuToggle = document.getElementById('menu-toggle');
     const navContainer = document.getElementById('nav-container');
-    const navLinks = document.querySelectorAll('.nav-link');
     const navbar = document.querySelector('.navbar');
 
     if (menuToggle && navContainer) {
@@ -291,231 +355,125 @@ document.addEventListener('DOMContentLoaded', () => {
             navContainer.classList.toggle('active');
             menuToggle.innerText = navContainer.classList.contains('active') ? '✕' : '☰';
         });
-
-        // Close menu on link click (important for mobile)
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navContainer.classList.remove('active');
-                menuToggle.innerText = '☰';
-            });
-        });
     }
 
     // Scroll Effect
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.98)';
-            navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
-        } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.9)';
-            navbar.style.boxShadow = 'none';
+        if (navbar) {
+            if (window.scrollY > 50) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 10px 30px rgba(0,0,0,0.08)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.9)';
+                navbar.style.boxShadow = 'none';
+            }
         }
     });
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                setTimeout(() => {
-                    entry.target.classList.add('fadeIn');
-                }, index * 150);
-            }
-        });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.z-row, .card, .section-header').forEach(el => {
-        el.classList.add('animate');
-        observer.observe(el);
-    });
-
     initROICalculator();
-    initBoardCategories();
-    updateCategoryCounts();
+    initHelpCenter();
     switchLanguage('ko');
 });
-
-// Category Filtering Logic
-function initBoardCategories() {
-    document.querySelectorAll('.cat-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const category = card.querySelector('h4').innerText;
-            alert(`${category} 주제의 게시글을 필터링합니다.`);
-            loadPosts(category);
-        });
-    });
-}
 
 // Modal Helpers
 function openModal(type) {
     const container = document.getElementById('modal-container');
     if (!container) return;
-    container.classList.add('active');
+    container.style.display = 'flex';
     document.getElementById('login-modal').style.display = type === 'login' ? 'block' : 'none';
-    const postModal = document.getElementById('post-modal');
-    if (postModal) postModal.style.display = type === 'post' ? 'block' : 'none';
+    const inqModal = document.getElementById('inquiry-modal');
+    if (inqModal) inqModal.style.display = type === 'inquiry' ? 'block' : 'none';
 }
 
 function closeModal() {
     const container = document.getElementById('modal-container');
-    if (container) container.classList.remove('active');
+    if (container) container.style.display = 'none';
 }
 window.closeModal = closeModal;
 
-const authBtn = document.getElementById('auth-btn');
-if (authBtn) {
-    authBtn.addEventListener('click', () => {
-        if (currentUser) firebase.auth().signOut();
-        else openModal('login');
-    });
-}
-
-const btnNewPost = document.getElementById('btn-new-post');
-if (btnNewPost) btnNewPost.addEventListener('click', () => openModal('post'));
-
-const btnSavePost = document.getElementById('btn-save-post');
-if (btnSavePost) {
-    btnSavePost.addEventListener('click', async () => {
-        const title = document.getElementById('post-title').value;
-        const content = document.getElementById('post-content').value;
-        const category = document.getElementById('post-category').value;
-        const userId = currentUser.email.split('@')[0];
-        try {
-            await firebase.firestore().collection('posts').add({
-                title, content, category, authorId: userId, uid: currentUser.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
-            });
-            closeModal();
-            // Reset fields
-            document.getElementById('post-title').value = '';
-            document.getElementById('post-content').value = '';
-        } catch (e) { alert(e.message); }
-    });
-}
-
-function loadPosts(filter = null) {
-    const list = document.getElementById('post-list');
-    if (!list) return;
-
-    let query = firebase.firestore().collection('posts').orderBy('createdAt', 'desc');
-    
-    query.onSnapshot(snap => {
-        list.innerHTML = '';
-        if (snap.empty) {
-            list.innerHTML = `
-                <div class="card" style="padding: 100px; text-align: center; border-style: dashed;">
-                    <span style="font-size: 3rem; display: block; margin-bottom: 20px;">📋</span>
-                    <h3>아직 등록된 논의가 없습니다.</h3>
-                    <p style="color: #999;">첫 번째 전문가가 되어 실제 로봇 운용 경험을 공유해 주세요!</p>
-                </div>
-            `;
-            return;
-        }
-
-        snap.forEach(doc => {
-            const d = doc.data();
-            const id = doc.id;
-            
-            // 필터가 있는 경우 스킵 로직 (실제 DB 필터링으로 확장 가능)
-            if (filter && d.category !== filter && filter !== '전체') return;
-
-            const canDel = isAdmin || (currentUser && currentUser.uid === d.uid);
-            const item = document.createElement('div');
-            item.className = 'post-item card'; // 카드 스타일 적용
-            item.style.marginBottom = '15px';
-            item.innerHTML = `
-                <div style="flex: 1;">
-                    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                        ${d.authorId === 'admin' ? '<span class="admin-badge">NOTICE</span>' : '<span style="background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem;">' + (d.category || 'General') + '</span>'}
-                        <strong style="font-size: 1.1rem;">${d.title}</strong>
-                    </div>
-                    <div class="post-meta" style="font-size: 0.8rem; color: #999;">ID: ${d.authorId} | ${d.createdAt ? d.createdAt.toDate().toLocaleString() : '작성 직후'}</div>
-                    <p style="margin-top: 10px; color: #555; line-height: 1.5;">${d.content}</p>
-                </div>
-                ${canDel ? `<button class="btn-delete" onclick="deletePost('${id}')" style="margin-left: 20px;">삭제</button>` : ''}
-            `;
-            list.appendChild(item);
-        });
-    });
-}
-
-window.deletePost = id => { if(confirm('삭제하시겠습니까?')) firebase.firestore().collection('posts').doc(id).delete(); };
-
+// --- ROI Calculator Logic ---
 function initROICalculator() {
-    const target = document.querySelector('#industries');
-    if (!target) return;
-    const sect = document.createElement('section');
-    sect.id = 'resources'; sect.className = 'section';
-    sect.innerHTML = `
-        <div class="section-header">
-            <h2 data-i18n="roi_title">ROI 계산기</h2>
-            <p data-i18n="roi_desc">수동 검사에서 RaaS 모델로 전환 시 절감되는 비용을 예상해 보세요.</p>
-        </div>
-        <div style="max-width: 800px; margin: 0 auto; background: var(--bg-gray); padding: 40px; border-radius: 12px; border: 1px solid var(--border-color);">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
-                <div>
-                    <label style="display: block; margin-bottom: 10px; font-weight: 600;" data-i18n="roi_label_manual">월간 수동 검사 비용 ($)</label>
-                    <input type="number" id="manualCost" value="5000" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
-                </div>
-                <div>
-                    <label style="display: block; margin-bottom: 10px; font-weight: 600;" data-i18n="roi_label_hours">월간 검사 시간</label>
-                    <input type="number" id="hours" value="160" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px;">
-                </div>
-            </div>
-            <div style="background: var(--bg-dark); color: white; padding: 30px; border-radius: 8px; text-align: center;">
-                <p style="color: #999; margin-bottom: 10px;" data-i18n="roi_savings_label">RoboLease 도입 시 예상 월간 절감액</p>
-                <h3 id="savingsResult" style="font-size: 2.5rem; color: var(--primary-color);">$2,400</h3>
-                <p style="font-size: 0.9rem; color: #666; margin-top: 15px;" data-i18n="roi_note">*표준 ANYmal 구독 vs 인력 비용 및 위험 완화를 기준으로 합니다.</p>
-            </div>
-        </div>
-    `;
-    target.after(sect);
-    document.getElementById('manualCost').addEventListener('input', () => {
-        document.getElementById('savingsResult').innerText = `$${Math.max(0, document.getElementById('manualCost').value - 2600).toLocaleString()}`;
-    });
-}
+    const staffInput = document.getElementById('roi-staff');
+    const freqInput = document.getElementById('roi-freq');
+    const resultEl = document.getElementById('roi-total-savings');
 
-// --- Dynamic Category Counts & Seeding ---
-async function updateCategoryCounts() {
-    if (typeof firebase === 'undefined') return;
-    const counts = { '산업 안전': 0, '자율 주행': 0, '데이터 분석': 0, '유지보수': 0 };
-    const snap = await firebase.firestore().collection('posts').get();
-    
-    snap.forEach(doc => {
-        const cat = doc.data().category;
-        if (counts[cat] !== undefined) counts[cat]++;
-    });
+    if (!staffInput || !freqInput || !resultEl) return;
 
-    const catCards = document.querySelectorAll('.cat-card');
-    catCards.forEach(card => {
-        const titleEl = card.querySelector('h4');
-        if (!titleEl) return;
-        const title = titleEl.innerText;
-        const countSpan = card.querySelector('span');
-        if (counts[title] !== undefined) {
-            countSpan.innerText = `${counts[title]} 가이드/논의`;
-        }
-    });
-
-    // 만약 게시글이 하나도 없다면 샘플 데이터 로드 제안 (관리자로 접속 시)
-    if (snap.empty && currentUser && isAdmin) {
-        if (confirm('게시판이 비어 있습니다. 전문가용 샘플 데이터 4개를 생성할까요?')) {
-            seedSampleData();
-        }
+    function calculate() {
+        const staff = parseInt(staffInput.value) || 0;
+        const freq = parseInt(freqInput.value) || 0;
+        const manualCost = staff * 50 * 8 * freq * 12;
+        const roboCost = 30000; 
+        const savings = Math.max(0, manualCost - roboCost);
+        resultEl.innerText = `$${savings.toLocaleString()}`;
     }
+
+    staffInput.addEventListener('input', calculate);
+    freqInput.addEventListener('input', calculate);
+    calculate();
 }
 
-async function seedSampleData() {
-    const samples = [
-        { title: "[공지] ANYmal 소프트웨어 v4.2 배포 및 업데이트 가이드", content: "이번 업데이트에서는 라이다 슬램(LiDAR SLAM) 성능이 20% 향상되었습니다. 현장 적용 전 백업을 권장드립니다.", category: "유지보수", authorId: "admin" },
-        { title: "에너지 플랜트 내 열화상 감지 오차 범위 보정 방법", content: "고온 환경에서 열화상 카메라의 노이즈를 줄이기 위한 캘리브레이션 팁을 공유합니다. 픽셀 오차를 0.5도 이내로 줄일 수 있습니다.", category: "데이터 분석", authorId: "user1" },
-        { title: "험지 보행 후 관절 구동부 먼지 제거 및 윤활 노하우", content: "광산이나 건설 현장 가동 후 로봇 관절부에 쌓인 미세 먼지는 수명을 단축시킵니다. 전용 에어 스프레이와 윤활유 사용법입니다.", category: "유지보수", authorId: "field_eng" },
-        { title: "가스 누출 위험 구역 진입 전 로봇 사전 체크리스트", content: "방폭 구역 진입 전 배터리 씰링 상태와 가스 센서의 정상 작동 여부를 확인하는 5단계 절차를 공유합니다.", category: "산업 안전", authorId: "safety_mgr" }
-    ];
+// --- Help Center & FAQ Logic ---
+const faqData = [
+    { q: "로봇의 배터리 수명은 어떻게 되나요?", a: "ANYmal은 1회 충전으로 약 90분간 연속 가동이 가능하며, 자동 도킹 시스템을 통해 스스로 충전합니다.", tags: ["배터리", "충전", "수명"] },
+    { q: "위험 지역(방폭 구역)에서도 사용 가능한가요?", a: "네, ATEX/IECEx 인증을 받은 방폭 로봇 유닛을 제공하여 화학 및 정유 시설에서도 안전하게 점검을 수행합니다.", tags: ["방폭", "석유", "가스", "안전"] },
+    { q: "데이터는 어떤 방식으로 전송되나요?", a: "4G/5G 혹은 자체 Wi-Fi 망을 통해 실시간으로 클라우드 대시보드에 전송되며, 보안을 위해 종단간 암호화를 지원합니다.", tags: ["데이터", "네트워크", "보안"] },
+    { q: "렌탈 기간 중 고장이 나면 어떻게 하나요?", a: "RaaS 모델에는 유지보수가 포함되어 있습니다. 고장 발생 시 48시간 이내에 대체 로봇을 배송하거나 현지 엔지니어가 방문합니다.", tags: ["유지보수", "고장", "AS", "수리"] }
+];
 
-    for (const s of samples) {
-        await firebase.firestore().collection('posts').add({
-            ...s, uid: "system", createdAt: firebase.firestore.FieldValue.serverTimestamp()
+function initHelpCenter() {
+    const searchInput = document.getElementById('faq-search');
+    const faqList = document.getElementById('faq-list');
+    const btnOpenInquiry = document.getElementById('btn-open-inquiry');
+
+    if (searchInput && faqList) {
+        searchInput.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            const filtered = faqData.filter(item => 
+                item.q.toLowerCase().includes(val) || 
+                item.tags.some(t => t.includes(val))
+            );
+            renderFAQs(filtered);
+        });
+        renderFAQs(faqData);
+    }
+
+    if (btnOpenInquiry) {
+        btnOpenInquiry.addEventListener('click', () => {
+            if (!currentUser) {
+                alert('로그인이 필요한 서비스입니다.');
+                openModal('login');
+            } else {
+                openModal('inquiry');
+            }
         });
     }
-    location.reload();
+
+    const btnSaveInquiry = document.getElementById('btn-save-inquiry');
+    if (btnSaveInquiry) {
+        btnSaveInquiry.addEventListener('click', async () => {
+            const title = document.getElementById('inquiry-title').value;
+            const content = document.getElementById('inquiry-content').value;
+            if (!title || !content) return alert('제목과 내용을 입력하세요.');
+
+            try {
+                await firebase.firestore().collection('inquiries').add({
+                    title, content, userId: currentUser.email.split('@')[0], uid: currentUser.uid, createdAt: firebase.firestore.FieldValue.serverTimestamp()
+                });
+                alert('문의가 성공적으로 접수되었습니다. 담당 엔지니어가 곧 연락드립니다.');
+                closeModal();
+            } catch (e) { alert('접수 실패: ' + e.message); }
+        });
+    }
 }
 
-window.seedSampleData = seedSampleData;
+function renderFAQs(data) {
+    const list = document.getElementById('faq-list');
+    if (!list) return;
+    list.innerHTML = data.map(item => `
+        <div class="faq-item">
+            <h4>Q: ${item.q}</h4>
+            <p>A: ${item.a}</p>
+        </div>
+    `).join('');
+}
