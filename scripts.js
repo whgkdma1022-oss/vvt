@@ -380,9 +380,22 @@ function openModal(type) {
     const container = document.getElementById('modal-container');
     if (!container) return;
     container.style.display = 'flex';
-    document.getElementById('login-modal').style.display = type === 'login' ? 'block' : 'none';
-    const inqModal = document.getElementById('inquiry-modal');
-    if (inqModal) inqModal.style.display = type === 'inquiry' ? 'block' : 'none';
+    
+    // Hide all first
+    ['login-modal', 'inquiry-modal', 'post-modal'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+    });
+
+    if (type === 'login') document.getElementById('login-modal').style.display = 'block';
+    if (type === 'inquiry') {
+        const inq = document.getElementById('inquiry-modal');
+        if (inq) inq.style.display = 'block';
+    }
+    if (type === 'post') {
+        const post = document.getElementById('post-modal');
+        if (post) post.style.display = 'block';
+    }
 }
 
 function closeModal() {
@@ -479,9 +492,23 @@ function renderFAQs(data) {
 }
 
 // --- Community Board Logic ---
-async function loadPosts() {
+let currentCategory = 'all';
+async function loadPosts(filterCat = 'all') {
     const list = document.getElementById('post-list');
     if (!list) return;
+    currentCategory = filterCat;
+
+    // UI Feedback for Active Category
+    document.querySelectorAll('.cat-card').forEach(card => {
+        const catName = card.querySelector('h4').innerText.trim();
+        if (catName === filterCat) {
+            card.style.borderColor = 'var(--primary-color)';
+            card.style.background = '#fff8f4';
+        } else {
+            card.style.borderColor = 'transparent';
+            card.style.background = 'white';
+        }
+    });
 
     // Sample data as fallback
     const samplePosts = [
@@ -509,7 +536,12 @@ async function loadPosts() {
     ];
 
     function renderPosts(posts) {
-        list.innerHTML = posts.map(data => {
+        const filtered = filterCat === 'all' ? posts : posts.filter(p => p.category === filterCat);
+        if (filtered.length === 0) {
+            list.innerHTML = `<div class="card" style="padding: 50px; text-align: center; color: #999;">'${filterCat}' 카테고리에 작성된 글이 없습니다.</div>`;
+            return;
+        }
+        list.innerHTML = filtered.map(data => {
             const date = data.createdAt ? new Date(data.createdAt.seconds * 1000).toLocaleDateString() : '방금 전';
             return `
                 <div class="card post-card" style="padding: 25px; transition: var(--transition); border: 1px solid var(--border-color);">
@@ -533,18 +565,28 @@ async function loadPosts() {
         const snapshot = await firebase.firestore().collection('posts')
             .orderBy('createdAt', 'desc').get();
         
-        if (snapshot.empty) {
-            renderPosts(samplePosts);
-        } else {
-            const posts = snapshot.docs.map(doc => doc.data());
-            // Combine firebase posts with sample posts if needed, or just show firebase ones
-            renderPosts([...posts, ...samplePosts]);
-        }
+        const dbPosts = snapshot.docs.map(doc => doc.data());
+        renderPosts([...dbPosts, ...samplePosts]);
     } catch (e) {
         console.warn("Firebase load failed, using samples:", e);
         renderPosts(samplePosts);
     }
 }
+
+// Add Category Click Events
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.cat-card').forEach(card => {
+        card.style.cursor = 'pointer';
+        card.addEventListener('click', () => {
+            const cat = card.querySelector('h4').innerText.trim();
+            if (currentCategory === cat) {
+                loadPosts('all');
+            } else {
+                loadPosts(cat);
+            }
+        });
+    });
+});
 
 const btnSavePost = document.getElementById('btn-save-post');
 if (btnSavePost) {
